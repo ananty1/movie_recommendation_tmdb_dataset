@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-keo#i@+)gi()zcu6o07bp9i$q63jmc7np^2#gql9j&7ngn*3w#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["movie-recommendation-tmdb-dataset.onrender.com","https://movie-recommendation-tmdb-dataset.onrender.com"]
+ALLOWED_HOSTS = ["movie-recommendation-tmdb-dataset.onrender.com","https://movie-recommendation-tmdb-dataset.onrender.com","127.0.0.1"]
 
 
 # Application definition

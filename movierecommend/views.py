@@ -8,11 +8,8 @@ import os
 # Create your views here.
 
 def index(request):
-    
-    print(os.listdir())
-    similaity = pd.read_pickle('static/movierecommend/similarity.pkl')
-    
     newdf = pd.read_pickle('static/movierecommend/movie_list.pkl')
+    movie_list = newdf[['title']].values
     
     if request.method=='POST':
         movie = request.POST.get('movie','')
@@ -20,9 +17,9 @@ def index(request):
         recommend_movies,recommend_posters=recommend(movie)
         thank=True
         recommended=[[recommend_posters[i],recommend_movies[i]] for i in range(len(recommend_movies)) ]
-        params={'movie':movie,'recommended':recommended,'thank':thank}
+        params={'movie':movie,'recommended':recommended,'thank':thank,"movie_list":movie_list}
         return render(request,'movierecommend/index.html',params)
-    return render(request,'movierecommend/index.html')
+    return render(request,'movierecommend/index.html',{"movie_list":movie_list})
 
 def fetchposter(movie_id):
     url=f'https://api.themoviedb.org/3/movie/{movie_id}?api_key=73ea8b3ecf4e69a185157298d93f8b48'

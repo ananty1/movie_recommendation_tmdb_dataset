@@ -26,7 +26,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                {% comment %} <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
@@ -34,16 +34,17 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled">Coming Soon</a>
-                </li>
+                </li> {% endcomment %}
             </ul>
         </div>
-        <form class="form-inline">
+        {% comment %} <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form> {% endcomment %}
     </nav>
 
     <!-- #Adding Carousel -->
+    {% load static %}
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Similar Movie</h1>
@@ -54,18 +55,20 @@
             <div class="form-group">
                 <label for="movie">Movie</label>
                 <select class="form-control" id="movie" name="movie">
-                    <option>Avatar</option>
-                    <option>Pirates of the Caribbean: At World's End</option>
-                    <option>Spider-Man 3</option>
+                    {% for movie in movie_list %}
+                    <option value="{{ movie.0 }}">{{ movie.0 }}</option>
+                    {% endfor %}
                 </select>
             </div>
+        
+            
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
           </div>
         
 
-        {% load static %}
+        
         <h4>Given Movie: {{movie}}</h4>
         <hr>
         <h5>Search Results:</h5>
@@ -97,6 +100,9 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+     <script>
+
+     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
