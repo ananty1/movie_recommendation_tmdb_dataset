@@ -1,0 +1,10 @@
+Brotli
+whitenoise
+django
+requests
+numpy
+pandas
+gunicorn
+psycopg2-binary
+dj-database-url
+uvicorn
