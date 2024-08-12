@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'movie.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/movie',
+        default='postgresql://movie_recommendation_ze8h_user:p117czOzOPRMKNoJUI1eRTgeMcath9oz@dpg-cqt5qiaj1k6c73bu9o2g-a.oregon-postgres.render.com/movie_recommendation_ze8h',
         conn_max_age=600
     )
 }
